@@ -210,8 +210,6 @@
     {"$GMIncludedFile":"","%Name":"input_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"input_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Joystick.bbmod","CopyToMask":-1,"filePath":"datafiles","name":"Joystick.bbmod","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Joystick.bbmod","CopyToMask":-1,"filePath":"datafiles/models","name":"Joystick.bbmod","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"Joystick0.bbmod","CopyToMask":-1,"filePath":"datafiles/models","name":"Joystick0.bbmod","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"Joystick1.bbmod","CopyToMask":-1,"filePath":"datafiles/models","name":"Joystick1.bbmod","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],

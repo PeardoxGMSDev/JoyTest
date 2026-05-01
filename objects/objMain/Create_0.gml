@@ -3,6 +3,7 @@ function bbmc(r, g, b) {
 }
 
 game_set_speed(display_get_frequency(), gamespeed_fps);
+z = 0;
 
 models = array_create(0);
 var bbm = new BBMOD_Model("models/Joystick.bbmod");
@@ -22,3 +23,7 @@ bbm.Materials[2] = m2;
 
 bbm.freeze();
 array_push(models, bbm);
+
+x = 0;
+y = -176;
+z = 586;
