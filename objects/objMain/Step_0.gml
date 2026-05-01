@@ -3,19 +3,19 @@ if(keyboard_check_pressed(vk_escape)) {
 }
 
 if(keyboard_check_direct(ord("A"))) {
-	x--;
-}
-
-if(keyboard_check_direct(ord("D"))) {
 	x++;
 }
 
+if(keyboard_check_direct(ord("D"))) {
+	x--;
+}
+
 if(keyboard_check_direct(ord("W"))) {
-	y++;
+	y--;
 }
 
 if(keyboard_check_direct(ord("S"))) {
-	y--;
+	y++;
 }
 
 if(keyboard_check_direct(vk_up)) {

@@ -22,8 +22,60 @@ m2.set_base_opacity(bbmc(0.345, 0.470, 0.907));
 bbm.Materials[2] = m2;
 
 bbm.freeze();
+meshCount = array_length(bbm.Meshes);
+bbox = undefined;
+center = undefined;
+if(meshCount > 0) {
+	var bboxmax = new BBMOD_Vec3(-infinity,-infinity,-infinity);
+	var bboxmin = new BBMOD_Vec3(infinity,infinity,infinity);
+	bbox = new BBMOD_Vec3(0,0,0);
+	center = new BBMOD_Vec3(0,0,0);
+	for(var i=0; i<meshCount; i++) {
+		if(!is_undefined(bbm.Meshes[i].BboxMin) && !is_undefined(bbm.Meshes[i].BboxMax)) {
+
+			if(bboxmax.X < bbm.Meshes[i].BboxMax.X) {
+				bboxmax.X = bbm.Meshes[i].BboxMax.X;
+			}
+			if(bboxmax.Y < bbm.Meshes[i].BboxMax.Y) {
+				bboxmax.Y = bbm.Meshes[i].BboxMax.Y;
+			}
+			if(bboxmax.Z < bbm.Meshes[i].BboxMax.Z) {
+				bboxmax.Z = bbm.Meshes[i].BboxMax.Z;
+			}
+			
+			if(bboxmin.X > bbm.Meshes[i].BboxMin.X) {
+				bboxmin.X = bbm.Meshes[i].BboxMin.X;
+			}
+			if(bboxmin.Y > bbm.Meshes[i].BboxMin.Y) {
+				bboxmin.Y = bbm.Meshes[i].BboxMin.Y;
+			}
+			if(bboxmin.Z > bbm.Meshes[i].BboxMin.Z) {
+				bboxmin.Z = bbm.Meshes[i].BboxMin.Z;
+			}
+			
+		}
+	}
+	
+	show_debug_message("bboxmin = " + string(bboxmin));
+	show_debug_message("bboxmax = " + string(bboxmax));
+	
+	bbox.X = (bboxmax.X - bboxmin.X);
+	bbox.Y = (bboxmax.Y - bboxmin.Y);
+	bbox.Z = (bboxmax.Z - bboxmin.Z);
+	center.X = (bboxmax.X + bboxmin.X) / 2;
+	center.Y = (bboxmax.Y + bboxmin.Y) / 2;
+	center.Z = (bboxmax.Z + bboxmin.Z) / 2;
+	show_debug_message("center = " + string(center));
+}
+
 array_push(models, bbm);
 
-x = 0;
-y = -176;
-z = 586;
+if(!is_undefined(center)) {
+	x = center.X;
+	y = center.Y;
+	z = center.Z;
+} else {
+	x = 0;
+	y = 176;
+	z = 586;
+}
